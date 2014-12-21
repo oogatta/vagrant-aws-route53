@@ -1,12 +1,12 @@
 vagrant-aws-route53
 ===============
 
-A Vagrant plugin assigns the public IP of the instance which vagrant-aws provider created to a specific Route 53 record set. 
+A Vagrant plugin assigns the public IP of the instance which vagrant-aws provider created to a specific Route 53 record set.
 
 ### Assigns the IP when
 
 * initial ```vagrant up```
-* ```vagrant up``` the halted instance. 
+* ```vagrant up``` the halted instance.
 
 ### Assigns 0.0.0.0 when
 
@@ -25,7 +25,7 @@ A Vagrant plugin assigns the public IP of the instance which vagrant-aws provide
 ## Install
 
 ```zsh
-$ vagrant install vagrant-aws-route53
+$ vagrant plugin install vagrant-aws-route53
 ```
 
 ## Config
