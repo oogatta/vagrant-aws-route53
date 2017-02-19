@@ -21,8 +21,8 @@ module VagrantPlugins
             instance_id:       instance_id,
             hosted_zone_id:    hosted_zone_id,
             record_set:        record_set,
-          ) do |instance_id, pubilic_ip, record_set|
-            environment[:ui].info("#{instance_id}'s #{pubilic_ip} has been assigned to #{record_set[0]}[#{record_set[1]}]")
+          ) do |instance_id, public_ip, record_set|
+            environment[:ui].info("#{instance_id}'s #{public_ip} has been assigned to #{record_set[0]}[#{record_set[1]}]")
           end
 
           @app.call(environment)

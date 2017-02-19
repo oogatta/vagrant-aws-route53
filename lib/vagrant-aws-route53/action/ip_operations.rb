@@ -24,14 +24,21 @@ module VagrantPlugins
 
           ec2 = ::AWS.ec2
           public_ip = options[:public_ip] || ec2.instances[options[:instance_id]].public_ip_address
+          public_dns_name = ec2.instances[options[:instance_id]].public_dns_name
 
           record_sets = ::AWS::Route53::HostedZone.new(options[:hosted_zone_id]).rrsets
           record_set  = record_sets[*options[:record_set]]
-          record_set.resource_records = [{ value: public_ip }]
+          if options[:record_set][0] == 'CNAME'
+            value_for_logs = public_dns_name
+            record_set.resource_records = [{value: public_dns_name}]
+          else
+            value_for_logs = public_ip
+            record_set.resource_records = [{value: public_ip}]
+          end
           record_set.update
 
           if block_given?
-            yield options[:instance_id], public_ip, options[:record_set]
+            yield options[:instance_id], value_for_logs, options[:record_set]
           end
 
           nil

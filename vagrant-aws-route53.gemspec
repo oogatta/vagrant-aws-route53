@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors       = 'Naohiro Oogatta'
   s.email         = 'oogatta@gmail.com'
   s.homepage      = 'https://github.com/oogatta/vagrant-aws-route53'
-  s.summary       = 'Assigns IPs of Vagrant AWS instances to route 53.'
-  s.description   = 'A Vagrant plugin assigns the IP of the instance which vagrant-aws provider created to a specific Route 53 record set.'
+  s.summary       = 'Assigns IPs or public DNS name of Vagrant AWS instances to route 53.'
+  s.description   = 'A Vagrant plugin assigns the IP or public DNS name of the instance which vagrant-aws provider created to a specific Route 53 record set.'
   s.require_path  = 'lib'
   s.files         = Dir.glob('lib/**/*') + %w(LICENSE README.md)
 

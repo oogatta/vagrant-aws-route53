@@ -3,7 +3,7 @@ vagrant-aws-route53
 
 A Vagrant plugin assigns the public IP of the instance which vagrant-aws provider created to a specific Route 53 record set. 
 
-### Assigns the IP when
+### Assigns the IP / the public DNS name when (A record / CNAME record)
 
 * initial ```vagrant up```
 * ```vagrant up``` the halted instance. 
@@ -27,6 +27,11 @@ A Vagrant plugin assigns the public IP of the instance which vagrant-aws provide
 ```zsh
 $ vagrant install vagrant-aws-route53
 ```
+
+## Record Set Options
+
+* %w(test.oogatta.com. A) - uses public IP of EC2 Instance 
+* %w(test.oogatta.com. CNAME) - uses public DNS name of EC2 Instance (within AWS datacenter points to internal IP, otherwise to public IP)
 
 ## Config
 
